@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - Operador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Tela de Carregamento -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="spinner"></div>
+            <p>Verificando permissões...</p>
+        </div>
+
+        <!-- Painel do Operador -->
+        <div id="operator-panel" class="hidden">
+            <header class="app-header operator-header">
+                <div class="header-content">
+                    <div class="logo-small">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>Painel de Controle - Operador</span>
+                    </div>
+                    <div class="user-info">
+                        <span class="operator-badge">OPERADOR</span>
+                        <span id="operator-name">Carregando...</span>
+                        <button id="operator-logout-btn" class="btn btn-secondary">Sair</button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <div class="operator-welcome">
+                    <h2>Central de Operações</h2>
+                    <p class="operator-subtitle">Bem-vindo ao painel de controle. Você tem acesso privilegiado ao sistema.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <h3>Usuários Ativos</h3>
+                            <p class="stat-number">--</p>
+                            <span class="stat-label">Em breve</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">🚨</div>
+                        <div class="stat-content">
+                            <h3>Alertas Ativos</h3>
+                            <p class="stat-number">--</p>
+                            <span class="stat-label">Em breve</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <h3>Ocorrências Hoje</h3>
+                            <p class="stat-number">--</p>
+                            <span class="stat-label">Em breve</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <h3>Resolvidas</h3>
+                            <p class="stat-number">--</p>
+                            <span class="stat-label">Em breve</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="operator-features">
+                    <h3>Funcionalidades em Desenvolvimento</h3>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">🗺️</div>
+                            <div>
+                                <h4>Mapa Centralizado</h4>
+                                <p>Visualização em tempo real de todas as ocorrências na região</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔔</div>
+                            <div>
+                                <h4>Sistema de Notificações</h4>
+                                <p>Envio de alertas para cidadãos em áreas específicas</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📈</div>
+                            <div>
+                                <h4>Relatórios e Análises</h4>
+                                <p>Estatísticas detalhadas sobre padrões de criminalidade</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">👮</div>
+                            <div>
+                                <h4>Gestão de Equipes</h4>
+                                <p>Coordenação de agentes e recursos no território</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Mensagem de Acesso Negado -->
+        <div id="access-denied" class="hidden">
+            <div class="denied-card">
+                <div class="denied-icon">🚫</div>
+                <h2>Acesso Negado</h2>
+                <p>Você não tem permissão para acessar esta área.</p>
+                <p class="denied-detail">Esta página é exclusiva para operadores de segurança.</p>
+                <button id="back-to-home" class="btn btn-primary">Voltar para Início</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Firebase SDK (Versão 9 Compat via CDN) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Script Principal -->
+    <script src="script.js"></script>
+</body>
+</html>
